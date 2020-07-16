@@ -7,8 +7,11 @@ public class AstroCalculator{
 	public String findSign(User user) {
 		
 		String dob=user.getDob();
-		int date=Integer.parseInt(dob.substring(0, 2));
-		int month=Integer.parseInt(dob.substring(3,5));
+		String[] arr1=new String[4];
+				arr1=dob.split("-");
+		
+		int date=Integer.parseInt(arr1[0]);
+		int month=Integer.parseInt( arr1[1]);
 		if(month==3 && date>=21 )
 			return "Aries";
 			else if( month==4 && date<=19)
